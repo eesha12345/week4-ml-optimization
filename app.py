@@ -47,7 +47,7 @@ elif menu == "Dataset Information":
 
     st.title("Dataset Information")
 
-    df = pd.read_csv("dataset.csv")
+    df = pd.read_csv("dataset.zip")
 
     st.write("First 5 Rows")
 
