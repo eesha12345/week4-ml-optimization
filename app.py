@@ -119,7 +119,7 @@ elif menu == "Prediction":
         study_hours = st.number_input("Weekly Self-Study Hours", min_value=0.0, max_value=168.0, value=15.0, step=1.0)
         attendance = st.number_input("Attendance Percentage", min_value=0.0, max_value=100.0, value=80.0, step=1.0)
         participation = st.number_input("Class Participation", min_value=0, max_value=10, value=5, step=1)
-        total_score = st.number_input("Total Score", min_value=0.0, max_value=100.0, value=75.0, step=1.0)
+        total_score = st.number_input("Total Score", min_value=0.0, max_value=100.0, value=0.0, step=1.0)
 
         if st.button("Predict"):
             # 2. Check if the user left critical input values completely at 0
