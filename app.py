@@ -128,9 +128,9 @@ elif menu == "Prediction":
             
              # # 3. Automated rule: 
             elif total_score < 0.0:
-            st.error("❌ Error: Total Score cannot be negative!")
+                st.error("❌ Error: Total Score cannot be negative!")
             elif total_score <= 25.0:
-            st.error("📝 Predicted Grade: Fail (Score below baseline passing threshold)")
+                st.error("📝 Predicted Grade: Fail (Score below baseline passing threshold)")
 
             
             # 4. If the score is above 25, run it through your trained ML model pipeline
