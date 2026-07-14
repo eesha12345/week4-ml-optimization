@@ -3,8 +3,8 @@ import pandas as pd
 import joblib
 
 # Load model and scaler
-model = joblib.load("best_model.pkl")
-scaler = joblib.load("scaler.pkl")
+model = joblib.load("models/best_model.pkl")
+scaler = joblib.load("models/scaler.pkl")
 
 # Page Settings
 st.set_page_config(
@@ -47,7 +47,7 @@ elif menu == "Dataset Information":
 
     st.title("Dataset Information")
 
-    df = pd.read_csv("dataset.zip",compression="zip")
+    df = pd.read_csv("dataset.csv")
 
     st.write("First 5 Rows")
 
