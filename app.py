@@ -127,7 +127,7 @@ elif menu == "Prediction":
                 st.warning("⚠️ Please input valid student metrics above to generate a realistic prediction.")
             
             # 3. Automated rule: If total score is between 0 and 25, declare an instant Fail
-            elif 0.0 <= total_score <= 25.0:
+            elif total_score <= 25.0:
                 st.error("📉 Predicted Grade: Fail (Score below baseline passing threshold)")
             
             # 4. If the score is above 25, run it through your trained ML model pipeline
