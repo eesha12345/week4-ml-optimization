@@ -119,16 +119,19 @@ elif menu == "Prediction":
         study_hours = st.number_input("Weekly Self-Study Hours", min_value=0.0, max_value=168.0, value=15.0, step=1.0)
         attendance = st.number_input("Attendance Percentage", min_value=0.0, max_value=100.0, value=80.0, step=1.0)
         participation = st.number_input("Class Participation", min_value=0, max_value=10, value=5, step=1)
-        total_score = st.number_input("Total Score", min_value=0.0, max_value=100.0, value=0.0, step=1.0)
+        total_score = st.number_input("Total Score", value=0.0, step=1.0)
 
         if st.button("Predict"):
             # 2. Check if the user left critical input values completely at 0
             if total_score == 0.0 and attendance == 0.0:
                 st.warning("⚠️ Please input valid student metrics above to generate a realistic prediction.")
             
-            # 3. Automated rule: If total score is between 0 and 25, declare an instant Fail
-            elif total_score <= 25.0:
-                st.error("📉 Predicted Grade: Fail (Score below baseline passing threshold)")
+             # # 3. Automated rule: 
+    elif total_score < 0.0:
+        st.error("❌ Error: Total Score cannot be negative!")
+    elif total_score <= 25.0:
+        st.error("📝 Predicted Grade: Fail (Score below baseline passing threshold)")
+
             
             # 4. If the score is above 25, run it through your trained ML model pipeline
             else:
